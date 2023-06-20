@@ -1,0 +1,1 @@
+from .conference_models import Conference
