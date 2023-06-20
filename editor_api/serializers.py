@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from conference.models.conference_models import Conference
 
-class AddProgramSerializer(serializers.ModelSerializer):
+class AddConferenceSerializer(serializers.ModelSerializer):
     """
     Serializer for AddProgramme
     """

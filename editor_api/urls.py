@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
 
-        path("addconference/", AddConference.as_view(), name="addconference"),
+        path("addconference/", views.AddConference.as_view(), name="addconference"),
 
 ]
