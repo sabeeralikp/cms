@@ -1,0 +1,13 @@
+venv/
+v_env/
+./v_env/
+author_api/__pycache__/
+author_api/migrations/__pycache__/
+conference/models/__pycache__/
+conference/__pycache__/
+conference/migrations/__pycache__/
+core/__pycache__/
+editor_api/__pycache__/
+editor_api/migrations/__pycache__/
+reviewer_api/__pycache__/
+reviewer_api/migrations/__pycache__/
