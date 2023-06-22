@@ -54,7 +54,8 @@ class AddConference(CreateAPIView):
                 os.environ.get("ADMIN_EMAIL"),
             )
             text_content = "There is a new conference request"
-            html_content = f"<p><b>Email:</b> {send_user.email}</p><p><b>Conference Name:</b> {serializer.data['title']}</p>"
+            html_content = f'''<p><b>Email:</b> {send_user.email}</p>
+            <p><b>Conference Name:</b> {serializer.data['title']}</p>'''
             msg = EmailMultiAlternatives(subject, text_content, from_email, [to_email])
             msg.attach_alternative(html_content, "text/html")
             msg.send()
@@ -127,13 +128,9 @@ def activate_user(request, uidb64, token):
     """
         Activate User
     """
-    try:
-        uid = force_str(urlsafe_base64_decode(uidb64))
+    uid = force_str(urlsafe_base64_decode(uidb64))
 
-        user = User.objects.get(pk=uid)
-
-    except Exception as e:
-        user = None
+    user = User.objects.filter(pk=uid)[0]
 
     if user and generate_token.check_token(user, token):
         user.is_email_verified = True
