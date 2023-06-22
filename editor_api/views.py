@@ -20,9 +20,7 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 from django.http import HttpResponse
 
-
 import os
-
 
 load_dotenv(find_dotenv())
 
