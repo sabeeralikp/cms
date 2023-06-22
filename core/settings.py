@@ -47,15 +47,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'author_api',
-    'editor_api',
-    'reviewer_api',
     "rest_framework",
     "rest_framework.authtoken",
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
     "conference",
-
+    'author_api',
+    'editor_api',
+    'reviewer_api',
 ]
 
 MIDDLEWARE = [
