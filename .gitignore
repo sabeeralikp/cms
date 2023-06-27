@@ -12,3 +12,4 @@ editor_api/migrations/__pycache__/
 reviewer_api/__pycache__/
 reviewer_api/migrations/__pycache__/
 utils/__pycache__/
+conference/migrations/

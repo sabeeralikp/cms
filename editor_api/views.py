@@ -19,9 +19,10 @@ from django.utils.encoding import force_bytes, force_str
 from django.core.mail import EmailMessage
 from django.http import HttpResponse
 
+from dotenv import load_dotenv, find_dotenv
+
 from utils.utils import generate_token
 
-from dotenv import load_dotenv, find_dotenv
 from .serializers import AddConferenceSerializer, UserSerializer
 
 load_dotenv(find_dotenv())
@@ -88,8 +89,8 @@ class Registration(CreateAPIView):
             send_activation_email(created_user, request)
 
             return Response(res, status=status.HTTP_201_CREATED)
-        else:
-            return Response(serialized.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response(serialized.errors, status=status.HTTP_400_BAD_REQUEST)
 
 def send_activation_email(user, request):
     """Function to send activation email for registration
@@ -138,6 +139,6 @@ def activate_user(request, uidb64, token):
         user.save()
         template = loader.get_template("authentication/activate-succesful.html")
         return HttpResponse(template.render(request=request))
-    else:
-        template = loader.get_template("authentication/activate-failed.html")
-        return HttpResponse(template.render(request=request))
+
+    template = loader.get_template("authentication/activate-failed.html")
+    return HttpResponse(template.render(request=request))
