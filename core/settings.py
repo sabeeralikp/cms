@@ -35,7 +35,7 @@ DB_USER = os.environ.get("DB_USER")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.32.118','localhost']
 
 
 # Application definition
