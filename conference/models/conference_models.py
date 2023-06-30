@@ -1,7 +1,8 @@
+""" Models related to Conference
+"""
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
-from django.contrib.auth.models import Group, Permission
+# from django.contrib.auth.models import Group, Permission
 
 # Create your models here.
 
@@ -22,6 +23,8 @@ class Conference(models.Model):
     conference_website = models.CharField(max_length=250)
 
     class Meta:
+        """Meta for Conference model
+        """
         db_table = "conference"
 
 
